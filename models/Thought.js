@@ -4,7 +4,7 @@ const reactionSchema = new Schema (
     {
         reactionId: {
             type: Schema.Types.ObjectId,
-            default: new Types.ObjectId
+            default: () => new Types.ObjectId()
         },
         reactionBody: {
             type: String,
@@ -19,6 +19,11 @@ const reactionSchema = new Schema (
             type: Date,
             default: Date.now(),
             get: str => new Date(str).toLocaleString()
+        }
+    },
+    {
+        toJSON: {
+            getters: true
         }
     }
 );
