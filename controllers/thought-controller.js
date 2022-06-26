@@ -15,6 +15,10 @@ const thoughtController = {
     // get one thought by id
     getThoughtById({ params }, res) {
         Thought.findOne({ _id: params.thoughtId })
+            .populate({
+                path: "reactions",
+                select: '-__v'
+            })
             .select('-__v')
             .then(dbThoughtData => {
                 if (!dbThoughtData) {
@@ -30,12 +34,8 @@ const thoughtController = {
     },
 
     // create a new thought
-    addThought({ params, body }, res) {
-        Thought.create({
-            thoughtText: body.thoughtText,
-            username: body.username,
-            userId: params.userId
-        })
+    addThought({ body }, res) {
+        Thought.create(body)
             .then(({ _id }) => {
                 return User.findOneAndUpdate(
                     { _id: params.userId },
@@ -58,6 +58,11 @@ const thoughtController = {
     // update a thought by id
     updateThought({ params, body }, res) {
         Thought.findOneAndUpdate({ _id: params.thoughtId }, body, { new: true, runValidators: true })
+        .populate({
+            path: 'reactions',
+            select: '-__v'
+        })
+        .select('-__v')
         .then(dbThoughtData => {
             if (!dbThoughtData) {
                 res.status(404).json({ message: 'No thought found with this id!' });
@@ -85,11 +90,9 @@ const thoughtController = {
             })
             .then(dbUserData => {
                 if (!dbUserData) {
-                    res.status(404).json({ message: 'No user found with this id!' });
+                    res.status(404).json({ message: 'Thought has been successfully deleted!' });
                     return;
                 }
-                // return the updated user data, now without the _id of the thought in the thoughts array, and return it to the user
-                res.json(dbUserData);
             })
             .catch(err => res.json(err));
     },
@@ -101,6 +104,11 @@ const thoughtController = {
             { $push: { reactions: body } },
             { new: true, runValidators: true }
         )
+            .populate({
+                path: 'reactions',
+                select: '-__v'
+            })
+            .select('-__v')
             .then(dbThoughtData => {
                 if (!dbThoughtData) {
                     res.status(404).json({ message: 'No thought found with this id' });
