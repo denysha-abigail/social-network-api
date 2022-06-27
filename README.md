@@ -30,16 +30,19 @@ This back-end API application utilizes JavaScript, MongoDB, Node.js, and Node Pa
 
 - GET, POST, PUT, and DELETE Users
 
+https://user-images.githubusercontent.com/96617237/175848595-2592a762-4f91-4fd0-859e-1d1632520f14.mp4
 
 - POST and DELETE friends (Followers)
 
+https://user-images.githubusercontent.com/96617237/175848617-5adb13aa-1d04-4cee-95ac-bebf74c18e88.mp4
 
 - GET, POST, PUT, and DELETE Thoughts (Comments)
 
+https://user-images.githubusercontent.com/96617237/175848654-585deb4d-3175-43b0-bad3-157ab9aa4f56.mp4
 
 - PUT and DELETE reactions (Replies) 
 
-
+https://user-images.githubusercontent.com/96617237/175848687-cef2847a-a893-4ecd-a66c-787f635948bd.mp4
 
 ## License
 - This project is licensed under: [MIT](https://opensource.org/licenses/MIT)
