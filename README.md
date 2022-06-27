@@ -3,7 +3,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ## Description
-This back-end API application utilizes JavaScript, MongoDB, Node.js, and Node Package Manager (Express and Mongoose) to implement Object-Document Mapping and CRUD functionality to a social network intended for a social media startup.
+This back-end API application utilizes JavaScript, MongoDB, Node.js, and Node Package Manager (Express and Mongoose) to implement Object-Document Mapping and CRUD functionality to a social network database intended for a social media startup.
 
 ## Table of Contents
   - [Installation](#installation)
