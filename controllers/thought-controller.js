@@ -51,7 +51,7 @@ const thoughtController = {
             })
             .then(dbUserData => {
                 if (!dbUserData) {
-                    res.status(404).json({ message: 'No pizza found with this id!' });
+                    res.status(404).json({ message: 'No user found with this id!' });
                     return;
                 }
                 res.json(dbUserData);
@@ -97,7 +97,7 @@ const thoughtController = {
                     res.status(404).json({ message: 'No thought found with this id!' });
                     return;
                 }
-                res.json({message: 'Thought has been successfully deleted!'});
+                res.json({message: 'Thought successfully deleted!'});
             })
             .catch(err => res.json(err));
     },
@@ -137,7 +137,7 @@ const thoughtController = {
                     res.status(404).json({ message: 'No reaction found with this id!'});
                     return;
                 }
-                res.json({message: 'Reaction has been successfully deleted!'});
+                res.json({message: 'Reaction successfully deleted!'});
             })
             .catch(err => res.json(err));
     }
