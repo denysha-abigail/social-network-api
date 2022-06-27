@@ -34,8 +34,12 @@ const thoughtController = {
     },
 
     // create a new thought
-    addThought({ body }, res) {
-        Thought.create(body)
+    addThought({ params, body }, res) {
+        Thought.create({
+            thoughtText: body.thoughtText,
+            username: body.username,
+            userId: params.userId
+        })
             .then(({ _id }) => {
                 return User.findOneAndUpdate(
                     { _id: params.userId },
@@ -88,11 +92,12 @@ const thoughtController = {
                     { new: true }
                 );
             })
-            .then(dbUserData => {
-                if (!dbUserData) {
-                    res.status(404).json({ message: 'Thought has been successfully deleted!' });
+            .then(dbThoughtData => {
+                if (!dbThoughtData) {
+                    res.status(404).json({ message: 'No thought found with this id!' });
                     return;
                 }
+                res.json({message: 'Thought has been successfully deleted!'});
             })
             .catch(err => res.json(err));
     },
@@ -127,7 +132,13 @@ const thoughtController = {
             { $pull: { reactions: { reactionId: params.reactionId } } },
             { new: true }
         )
-            .then(dbUserData => res.json(dbUserData))
+            .then(dbReactionData => {
+                if (!dbReactionData) {
+                    res.status(404).json({ message: 'No reaction found with this id!'});
+                    return;
+                }
+                res.json({message: 'Reaction has been successfully deleted!'});
+            })
             .catch(err => res.json(err));
     }
 };
