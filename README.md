@@ -1,19 +1,57 @@
-# social-network-api
+# APIgram
 
-<!-- AS A social media startup
-I WANT an API for my social network that uses a NoSQL database
-SO THAT my website can handle large amounts of unstructured data
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-GIVEN a social network API
+## Description
+This back-end API application utilizes JavaScript, MongoDB, Node.js, and Node Package Manager (Express and Mongoose) to implement Object-Document Mapping and CRUD functionality to a social network intended for a social media startup.
 
-WHEN I enter the command to invoke the application
-THEN my server is started and the Mongoose models are synced to the MongoDB database
+## Table of Contents
+  - [Installation](#installation)
+  - [Usage](#usage)
+  - [Preview](#preview)
+  - [License](#license)
+  - [Contribution](#contribution)
+  - [Questions](#questions)
+  - [Credits](#credits)
 
-WHEN I open API GET routes in Insomnia for users and thoughts
-THEN the data for each of these routes is displayed in a formatted JSON
+## Installation
+- Prior to starting up the program, make sure you have [Node.js](https://nodejs.org/en/download/), [MongoDB](https://coding-boot-camp.github.io/full-stack/mongodb/how-to-install-mongodb), and [Insomnia](https://insomnia.rest/download) installed onto your local computer for optimal user experience.
 
-WHEN I test API POST, PUT, and DELETE routes in Insomnia
-THEN I am able to successfully create, update, and delete users and thoughts in my database
+- To install this application, clone this repository onto your local computer, open it in your preferred code editor (i.e. [VS Code](https://code.visualstudio.com/download)), and run the command ```npm i``` on your terminal.
 
-WHEN I test API POST and DELETE routes in Insomnia
-THEN I am able to successfully create and delete reactions to thoughts and add and remove friends to a user’s friend list -->
+## Usage
+- Once all dependencies have been installed, run the command ```npm start``` to turn on your server.
+
+- Once the server has been turned on, head over to Insomnia to test the API GET, POST, PUT, and DELETE routes in order to create, read, update, and delete data in the social network database.  
+
+- Please note that in order to properly test all routes, at least one user must first be created.
+
+## Preview
+
+- GET, POST, PUT, and DELETE Users
+
+
+- POST and DELETE friends (Followers)
+
+
+- GET, POST, PUT, and DELETE Thoughts (Comments)
+
+
+- PUT and DELETE reactions (Replies) 
+
+
+
+## License
+- This project is licensed under: [MIT](https://opensource.org/licenses/MIT)
+
+## Contribution 
+- Forking this repository is always welcomed and encouraged!
+
+> If you encounter a problem with this application, please add an issue or pull request to the GitHub repository. 
+
+## Questions
+- Please feel free to use this application at any time and visit my personal [GitHub](https://github.com/denysha-abigail) profile to access other open source projects! 
+
+## Credits
+- *[Denysha Guerrios-Armaiz](https://github.com/denysha-abigail), 06/2022*
+
